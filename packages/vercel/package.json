@@ -1,0 +1,38 @@
+{
+  "name": "vercel-feature-flags",
+  "description": "A simple feature flag library that runs on Vercel Edge Config",
+  "version": "0.0.1",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./src": {
+      "default": "./src/index.ts"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --config tsup.config.ts",
+    "lint": "TIMING=1 eslint src/**/*.ts* --fix",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/saas-js/feature-flags.git",
+    "directory": "packages/vercel"
+  },
+  "dependencies": {
+    "@saas-js/feature-flags": "workspace:("
+  },
+  "devDependencies": {
+    "tsup": "6.7.0"
+  }
+}

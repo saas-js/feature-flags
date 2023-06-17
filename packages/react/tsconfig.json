@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@saas-js/feature-flags": ["../../core/src/index.ts"]
+    }
+  },
+  "include": ["./src"]
+}
